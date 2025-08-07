@@ -66,3 +66,31 @@ export default function Accordian() {
     </div>
   );
 }
+
+/*
+
+Q1: What is the difference between single and multiple selection in this accordion?
+Answer:
+In single selection, only one accordion item can be open at a time. In multiple selection mode, users can open and close multiple items independently. This is managed using two different states: selected (for single) and multiple array (for multi).
+
+Q2: Why do we use useState here?
+Answer:
+useState is used to track:
+
+selected: ID of the item currently open (for single selection)
+
+enableMultiSelection: Boolean to toggle between single and multiple selection modes
+
+multiple: Array of item IDs currently open (for multi selection)
+
+Q3: How does conditional rendering work in this component?
+Answer:
+It uses ternary operators (condition ? true : false) and logical conditions (condition && JSX) to decide whether to show the answer part of an accordion item.
+
+Q4: How do you update an array in React state?
+Answer:
+By creating a copy of the existing array (let copy = [...array]), modifying it (like push or splice), and then updating the state using the setter function (setArray(copy)).
+
+Q5: Why is it important not to mutate state directly in React?
+Answer:
+Direct mutation can lead to unexpected behavior because React relies on detecting state changes via reference comparison. Always use state setters to ensure proper re-renders.*/ 
